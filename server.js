@@ -5,6 +5,14 @@ var exphbs = require("express-handlebars");
 
 var db = require("./models");
 
+// Petfinder require
+var Petfinder = require('pet-finder-api')('api_key','api_secret');
+
+// keys.js import
+var keys = require("./keys");
+
+var petfinder = new Petfinder(keys.petfinder);
+
 var app = express();
 var PORT = process.env.PORT || 3000;
 
